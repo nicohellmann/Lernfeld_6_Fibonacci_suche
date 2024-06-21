@@ -16,3 +16,5 @@ class function:
             for i in range(0,len(self.y_parameters)):
                 re += self.y_parameters[i]**i
             return re
+    
+    
