@@ -15,5 +15,32 @@ class funtion1:
         self.y3x4 =24
         self.y2x5 = -15
         self.y2x4 = -120
+        self.y2x3 = -135
+        self.yx5 =-19
+        self.yx4 = -152
+        self.yx3 = -171
+        self.yx2 = 722
         
-        pass
+    def solve(self,x,y):
+        re=0
+        for i in range(0,len(self.x_parameters)):
+            re+=self.x_parameters[i]**i
+        for i in range(0,len(self.y_parameters)):
+            re+=self.y_parameters[i]**i
+        re += (x**3)*(y**4)*self.x3y4
+        re +=(x**2)*(y**4)*self.x2y4 
+        re +=(x**2)*(y**3)*self.x2y3 
+        re +=(x**1)*(y**4)*self.xy4 
+        re +=(x**3)*(y**3)*self.xy3 
+        re +=(x**3)*(y**2)*self.xy2 
+        re +=(x**5)*(y**4)*self.y4x5 
+        re +=(x**5)*(y**3)*self.y3x5 
+        re +=(x**4)*(y**3)*self.y3x4 
+        re +=(x**5)*(y**2)*self.y2x5 
+        re +=(x**4)*(y**2)*self.y2x4 
+        re +=(x**3)*(y**2)*self.y2x3 
+        re +=(x**5)*(y**1)*self.yx5 
+        re +=(x**4)*(y**1)*self.yx4 
+        re +=(x**3)*(y**1)*self.yx3 
+        re +=(x**2)*(y**1)*self.yx2 
+        return re
