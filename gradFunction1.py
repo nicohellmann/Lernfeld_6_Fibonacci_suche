@@ -1,5 +1,5 @@
-from funtion1 import AblxFunction1
-from funtion1 import AblyFunction1
+from AblxFunction1 import AblxFunction1
+from AblyFunction1 import AblyFunction1
 class GradFunction1:
 
     def __init__(self) -> None:
