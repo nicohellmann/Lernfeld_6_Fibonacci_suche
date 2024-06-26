@@ -118,25 +118,24 @@ print(f1.fibonacciMethod(15))
 def gradMethod(startpunkt:list):
     gradient = GradFunction1()
     vector = gradient.solve(startpunkt[0],startpunkt[1])
-    f1 = Funtion1()
+    
     l=0.0001
     while not(vector[0] ==0 and vector[1] ==0 ):
         vector = gradient.solve(startpunkt[0],startpunkt[1])
         
-        if((vector[0] < 0.2 and vector[0] > -0.2) and(vector[1] < 0.2 and vector[1] > -0.2) ):
+        if((vector[0] < 0.02 and vector[0] > -0.02) and(vector[1] < 0.02 and vector[1] > -0.02) ):
             break
         # abbrechen wenn das Verfahren den zu untersuchenden Bereich verlässt
         if startpunkt[0] > 2 or startpunkt[0] < -2 or startpunkt[1] > 2 or startpunkt[1] < -2:
             break
         startpunkt = [startpunkt[0] - l*vector[0],startpunkt[1]- l*vector[1]]
-        print("hier")
-        print(vector)
-        print(startpunkt)
+        
+        
+        
         
         
     return startpunkt
 test = GradFunction1()
+print(f1.fibonacciMethod(10))
+print(f1.gradMethod([0.5,0.5]))
 
-print(f1.solve(1,1))
-print(test.solve(1,1))
-print(gradMethod([-4,-4]))

@@ -46,8 +46,6 @@ class Funtion1:
         re +=(x**2)*(y**1)*self.x2y 
         return re
     # Findet den kleinsten funktionswert im teilintervall den die gerade hier bildet
-    def minimum(self,x,y,vector):
-        startpunkt = (x,y)
     def fibonacci(self,n):
         if n ==1 :
             return 1
@@ -63,8 +61,8 @@ class Funtion1:
 
     # fibonacci methode im mehrdimensionalen Raum bedeuted eine variable muss 'festgehalten' werden um entlang einer suchgeraden den geringsten Wert entlang dieser zu finden
     # in diesem Fall halte ich den y wert bei 1 fest
-        pointA = (0,-1)
-        pointB = (2,-1)
+        pointA = (0,0.5)
+        pointB = (2,0.5)
     
 
 
@@ -117,7 +115,7 @@ class Funtion1:
             
                 indexL =len(punkteDerUnterintervalle)-indexR-1
         
-        
+    
     
         if intervallPointAValue < self.solve(punkteDerUnterintervalle[1][0],punkteDerUnterintervalle[1][1]):
             print(punkteDerUnterintervalle)
@@ -129,7 +127,22 @@ class Funtion1:
         return punkteDerUnterintervalle[1]
 
 
-    
+    def gradMethod(self,startpunkt:list):
+        gradient = GradFunction1()
+        vector = gradient.solve(startpunkt[0],startpunkt[1])
+        # 'Lernrate' des Verfahrens 
+        l=0.0001
+        while not(vector[0] ==0 and vector[1] ==0 ):
+            vector = gradient.solve(startpunkt[0],startpunkt[1])
+            
+            # Bereich festlegen für ein aktzeptables ergebnis
+            if((vector[0] < 0.02 and vector[0] > -0.02) and(vector[1] < 0.02 and vector[1] > -0.02) ):
+                break
+            # abbrechen wenn das Verfahren den zu untersuchenden Bereich verlässt
+            if startpunkt[0] > 2 or startpunkt[0] < -2 or startpunkt[1] > 2 or startpunkt[1] < -2:
+                break
+            startpunkt = [startpunkt[0] - l*vector[0],startpunkt[1]- l*vector[1]]  
+        return startpunkt
 
     
 
