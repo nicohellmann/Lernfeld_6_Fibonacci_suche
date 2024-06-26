@@ -11,16 +11,16 @@ class Funtion1:
         self.xy4 =-40
         self.xy3 = -120
         self.xy2 = 600
-        self.y4x5 =1
-        self.y3x5 =3
-        self.y3x4 =24
-        self.y2x5 = -15
-        self.y2x4 = -120
-        self.y2x3 = -135
-        self.yx5 =-19
-        self.yx4 = -152
-        self.yx3 = -171
-        self.yx2 = 722
+        self.x5y4 =1
+        self.x5y3 =3
+        self.x4y3 =24
+        self.x5y2 = -15
+        self.x4y2 = -120
+        self.x3y2 = -135
+        self.x5y =-19
+        self.x4y = -152
+        self.x3y = -171
+        self.x2y = 722
         
     def solve(self,x,y):
         re=0
@@ -34,16 +34,16 @@ class Funtion1:
         re +=(x**1)*(y**4)*self.xy4 
         re +=(x**3)*(y**3)*self.xy3 
         re +=(x**3)*(y**2)*self.xy2 
-        re +=(x**5)*(y**4)*self.y4x5 
-        re +=(x**5)*(y**3)*self.y3x5 
-        re +=(x**4)*(y**3)*self.y3x4 
-        re +=(x**5)*(y**2)*self.y2x5 
-        re +=(x**4)*(y**2)*self.y2x4 
-        re +=(x**3)*(y**2)*self.y2x3 
-        re +=(x**5)*(y**1)*self.yx5 
-        re +=(x**4)*(y**1)*self.yx4 
-        re +=(x**3)*(y**1)*self.yx3 
-        re +=(x**2)*(y**1)*self.yx2 
+        re +=(x**5)*(y**4)*self.x5y4 
+        re +=(x**5)*(y**3)*self.x5y3 
+        re +=(x**4)*(y**3)*self.x4y3 
+        re +=(x**5)*(y**2)*self.x5y2 
+        re +=(x**4)*(y**2)*self.x4y2 
+        re +=(x**3)*(y**2)*self.x3y2 
+        re +=(x**5)*(y**1)*self.x5y 
+        re +=(x**4)*(y**1)*self.x4y 
+        re +=(x**3)*(y**1)*self.x3y 
+        re +=(x**2)*(y**1)*self.x2y 
         return re
     # Findet den kleinsten funktionswert im teilintervall den die gerade hier bildet
     def minimum(self,x,y,vector):
